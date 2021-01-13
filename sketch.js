@@ -11,6 +11,8 @@ function setup() {
     createCanvas(400,400);
 
     player = createSprite(200,200,10,10);
+    player.addImage(playerImage);
+    player.scale = 0.2;
 }
 
 function draw() {
@@ -26,11 +28,11 @@ function draw() {
     }
 
     if(keyDown(UP_ARROW)){
-        player.y = player.y + 5;
+        player.y = player.y - 5;
     }
 
     if(keyDown(DOWN_ARROW)){
-        player.y = player - 5;
+        player.y = player.y + 5;
     }
 
     drawSprites();
