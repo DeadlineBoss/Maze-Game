@@ -1,3 +1,4 @@
+
 var player;
 var playerImage;
 
@@ -124,8 +125,11 @@ function setup() {
 function draw() {
     //This runs again and again
     background("white");
+    console.log(mouseX);
+    console.log(mouseY);
 
     player.collide(Mazeblocks);
+
 
     if(keyDown(RIGHT_ARROW)){
         player.x = player.x + 5;
