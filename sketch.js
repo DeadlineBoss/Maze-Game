@@ -82,6 +82,7 @@ function setup() {
     player.scale = 0.06;
 
     endSprite = createSprite(390,390,20,20);
+    endSprite.shapeColor = "yellow";
 }
 
 function draw() {
