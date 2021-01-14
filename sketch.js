@@ -33,40 +33,55 @@ function setup() {
 
     //Creating the maze using blocks
     var cardboard1 = createSprite(80,70,100,20);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard1);
     var cardboard2 = createSprite(170,0,20,160);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard2);
     var cardboard3 = createSprite(40,70,20,100);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard3);
     var cardboard4 = createSprite(100,170,20,100);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard4);
     var cardboard5 = createSprite(240,0,20,60);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard5);
     var cardboard6 = createSprite(150,130,110,20);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard6);
     var cardboard7 = createSprite(320,150,20,90);
-    Mazeblocks.add(cardboard);
+    Mazeblocks.add(cardboard7);
     var cardboard8 = createSprite(210,180,140,20);
+    Mazeblocks.add(cardboard8);
     var cardboard9 = createSprite(50,240,20,120);
+    Mazeblocks.add(cardboard9);
     var cardboard10 = createSprite(40,300,190,20);
+    Mazeblocks.add(cardboard10);
     var cardboard11 = createSprite(270,360,20,140);
+    Mazeblocks.add(cardboard11);
     var cardboard12 = createSprite(230,240,105,20);
+    Mazeblocks.add(cardboard12);
     var cardboard13 = createSprite(130,300,20,100);
+    Mazeblocks.add(cardboard13);
     var cardboard14 = createSprite(180,320,20,180);
+    Mazeblocks.add(cardboard14);
     var cardboard15 = createSprite(250,300,50,20);
+    Mazeblocks.add(cardboard15);
     var cardboard16 = createSprite(205,360,50,20);
-    var cardboard17 = createSprite(240,70,150,20);
-    var cardboard18 = createSprite(360,280,100,20);
-    var cardboard19 = createSprite(60,380,20,80);
-    var cardboard20 = createSprite(305,50,20,50);
-    var cardboard21 = createSprite(370,150,100,20);
-    var cardboard22 = createSprite(310,350,100,20);
+    Mazeblocks.add(cardboard16);
+    cardboard17 = createSprite(240,70,150,20);
+    Mazeblocks.add(cardboard17);
+    cardboard18 = createSprite(360,280,100,20);
+    Mazeblocks.add(cardboard18);
+    cardboard19 = createSprite(60,380,20,80);
+    Mazeblocks.add(cardboard19);
+    cardboard20 = createSprite(305,50,20,50);
+    Mazeblocks.add(cardboard20);
+    cardboard21 = createSprite(370,150,100,20);
+    Mazeblocks.add(cardboard21);
+    cardboard22 = createSprite(310,350,100,20);
+    Mazeblocks.add(cardboard22);
 
     player = createSprite(200,200,10,10);
     player.addImage(playerImage);
-    player.scale = 0.2;
+    player.scale = 0.06;
 
-    endSprite = createSprite(100,100,20,20);
+    endSprite = createSprite(390,390,20,20);
 }
 
 function draw() {
@@ -76,8 +91,7 @@ function draw() {
     console.log(mouseY);
 
     if(gameState === Start) {
-        Text("Press S To Start");
-
+        text("Press S To Start",150,200);
 
         if(keyDown("S")){
             gameState = Play;
@@ -111,6 +125,6 @@ function draw() {
     }
 
     if(gameState === End) {
-        Text("You Have Won The Game :)",200,200);
+        text("You Have Won The Game :)",150,200);
     }
 }
