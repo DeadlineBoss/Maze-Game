@@ -3,6 +3,11 @@ var playerImage;
 
 var Mazeblocks;
 
+var gameState = 1;
+var Start = 1;
+var Play = 2;
+var End = 3;
+
 function preload() {
     //Add Images here
     playerImage = loadImage("Images/am.png");
@@ -119,6 +124,10 @@ function setup() {
     player = createSprite(200,200,10,10);
     player.addImage(playerImage);
     player.scale = 0.2;
+
+    if(gameState === Start) {
+        //new form
+    }
 }
 
 function draw() {
@@ -128,7 +137,6 @@ function draw() {
     console.log(mouseY);
 
     player.collide(Mazeblocks);
-
 
     if(keyDown(RIGHT_ARROW)){
         player.x = player.x + 5;
