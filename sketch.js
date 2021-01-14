@@ -1,6 +1,8 @@
 var player;
 var playerImage;
 
+var endSprite;
+
 var Mazeblocks;
 
 var gameState = 1;
@@ -125,9 +127,7 @@ function setup() {
     player.addImage(playerImage);
     player.scale = 0.2;
 
-    if(gameState === Start) {
-        //new form
-    }
+    endSprite = createSprite(100,100,20,20);
 }
 
 function draw() {
@@ -136,23 +136,42 @@ function draw() {
     console.log(mouseX);
     console.log(mouseY);
 
-    player.collide(Mazeblocks);
+    if(gameState === Start) {
+        Text("Press S To Start");
+        
 
-    if(keyDown(RIGHT_ARROW)){
-        player.x = player.x + 5;
+        if(keyDown("S")){
+            gameState = Play;
+        }
     }
 
-    if(keyDown(LEFT_ARROW)){
-        player.x = player.x - 5;
+    if(gameState === Play) {
+        player.collide(Mazeblocks);
+
+        if(keyDown(RIGHT_ARROW)){   
+            player.x = player.x + 5;
+        }
+
+        if(keyDown(LEFT_ARROW)){
+            player.x = player.x - 5;
+        }
+
+        if(keyDown(UP_ARROW)){
+            player.y = player.y - 5;
+        }
+
+        if(keyDown(DOWN_ARROW)){
+            player.y = player.y + 5;
+        }
+
+        if(player.isTouching(endSprite)) {
+            gameState = End;
+        }
+
+        drawSprites();
     }
 
-    if(keyDown(UP_ARROW)){
-        player.y = player.y - 5;
+    if(gameState === End) {
+        Text("You Have Won The Game :)",200,200);
     }
-
-    if(keyDown(DOWN_ARROW)){
-        player.y = player.y + 5;
-    }
-
-    drawSprites();
 }
